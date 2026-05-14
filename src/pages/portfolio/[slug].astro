@@ -1,0 +1,68 @@
+---
+import { getCollection } from "astro:content";
+import Button from "../../components/button.astro";
+import Layout from "../../layouts/main.astro";
+
+export async function getStaticPaths() {
+  const items = await getCollection("portfolio");
+  return items.map((item) => ({
+    params: { slug: item.slug },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+const { Content } = await item.render();
+---
+
+<Layout title={`${item.data.title} — Rachael Stavchansky`}>
+  <main
+    class="relative z-30 max-w-4xl pb-1 mx-auto mt-10 bg-white dark:bg-neutral-950 md:rounded-t-md text-neutral-900"
+  >
+    <div
+      class="relative flex flex-col px-5 pt-6 border-t border-b-0 md:border-r md:border-l md:pt-20 lg:px-0 justify-stretch md:rounded-t-2xl border-neutral-200 dark:border-neutral-800"
+    >
+      <div
+        class="absolute top-0 left-0 hidden w-px h-full mt-1 -translate-x-px md:block bg-gradient-to-b from-transparent to-white dark:to-neutral-950"
+      ></div>
+      <div
+        class="absolute top-0 right-0 hidden w-px h-full mt-1 translate-x-px md:block bg-gradient-to-b from-transparent to-white dark:to-neutral-950"
+      ></div>
+      <div class="w-full max-w-2xl mx-auto">
+        <a
+          href="/portfolio"
+          class="inline-flex items-center mb-6 text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
+        >
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to portfolio
+        </a>
+        <h1
+          class="text-3xl font-bold leading-tight tracking-tighter text-left md:mb-4 md:text-4xl dark:text-neutral-100 lg:text-5xl md:leading-none"
+        >
+          {item.data.title}
+        </h1>
+        <div class="flex flex-wrap gap-4 mt-3 mb-8 text-sm text-neutral-500 dark:text-neutral-400">
+          <span><span class="font-medium text-neutral-700 dark:text-neutral-300">Company:</span> {item.data.company}</span>
+          <span><span class="font-medium text-neutral-700 dark:text-neutral-300">Category:</span> {item.data.category}</span>
+        </div>
+        <img
+          src={item.data.thumbnail}
+          class="w-full rounded-xl aspect-[16/9] object-cover mb-8"
+          alt={item.data.title}
+        />
+      </div>
+    </div>
+
+    <article
+      class="w-full max-w-2xl mx-auto mb-12 prose-sm prose px-7 lg:px-0 lg:prose-lg dark:prose-invert"
+    >
+      <Content />
+    </article>
+
+    <div class="w-full max-w-2xl mx-auto px-7 lg:px-0 mb-20">
+      <Button text={item.data.linkLabel} link={item.data.linkUrl} />
+    </div>
+  </main>
+</Layout>
