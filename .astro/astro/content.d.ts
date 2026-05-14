@@ -141,75 +141,75 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"portfolio": {
-"account-management.md": {
-	id: "account-management.md";
-  slug: "account-management";
-  body: string;
-  collection: "portfolio";
-  data: InferEntrySchema<"portfolio">
-} & { render(): Render[".md"] };
 "api-migration-guide.md": {
 	id: "api-migration-guide.md";
   slug: "api-migration-guide";
   body: string;
   collection: "portfolio";
-  data: InferEntrySchema<"portfolio">
+  data: any
 } & { render(): Render[".md"] };
 "build-plugins-guide.md": {
 	id: "build-plugins-guide.md";
   slug: "build-plugins-guide";
   body: string;
   collection: "portfolio";
-  data: InferEntrySchema<"portfolio">
+  data: any
 } & { render(): Render[".md"] };
 "career-matrix.md": {
 	id: "career-matrix.md";
   slug: "career-matrix";
   body: string;
   collection: "portfolio";
-  data: InferEntrySchema<"portfolio">
+  data: any
 } & { render(): Render[".md"] };
 "extendscripts-guide.md": {
 	id: "extendscripts-guide.md";
   slug: "extendscripts-guide";
   body: string;
   collection: "portfolio";
-  data: InferEntrySchema<"portfolio">
+  data: any
 } & { render(): Render[".md"] };
 "getting-started-guide.md": {
 	id: "getting-started-guide.md";
   slug: "getting-started-guide";
   body: string;
   collection: "portfolio";
-  data: InferEntrySchema<"portfolio">
+  data: any
 } & { render(): Render[".md"] };
 "hugo-on-netlify.md": {
 	id: "hugo-on-netlify.md";
   slug: "hugo-on-netlify";
   body: string;
   collection: "portfolio";
-  data: InferEntrySchema<"portfolio">
+  data: any
 } & { render(): Render[".md"] };
 "safety-interlock.md": {
 	id: "safety-interlock.md";
   slug: "safety-interlock";
   body: string;
   collection: "portfolio";
-  data: InferEntrySchema<"portfolio">
+  data: any
 } & { render(): Render[".md"] };
 "security-overview.md": {
 	id: "security-overview.md";
   slug: "security-overview";
   body: string;
   collection: "portfolio";
-  data: InferEntrySchema<"portfolio">
+  data: any
 } & { render(): Render[".md"] };
 "webrtc-article.md": {
 	id: "webrtc-article.md";
   slug: "webrtc-article";
   body: string;
   collection: "portfolio";
-  data: InferEntrySchema<"portfolio">
+  data: any
+} & { render(): Render[".md"] };
+"z-account-management.md": {
+	id: "z-account-management.md";
+  slug: "z-account-management";
+  body: string;
+  collection: "portfolio";
+  data: any
 } & { render(): Render[".md"] };
 };
 "post": {
@@ -218,7 +218,7 @@ declare module 'astro:content' {
   slug: "hello-world";
   body: string;
   collection: "post";
-  data: InferEntrySchema<"post">
+  data: any
 } & { render(): Render[".md"] };
 };
 
@@ -230,5 +230,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("../../src/content/config.js");
+	export type ContentConfig = never;
 }
