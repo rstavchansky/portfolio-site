@@ -1,0 +1,34 @@
+---
+import { getCollection } from "astro:content";
+import PageHeading from "../components/page-heading.astro";
+import PortfolioCard from "../components/portfolio-card.astro";
+import Layout from "../layouts/main.astro";
+
+const allItems = await getCollection("portfolio");
+---
+
+<Layout title="Portfolio — Rachael Stavchansky">
+  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+    <PageHeading
+      title="Portfolio"
+      description="Samples of my technical documentation work across API guides, software docs, hardware content, and team management resources."
+    />
+
+    <div
+      class="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2"
+    >
+      {
+        allItems.map((item) => {
+          return (
+            <PortfolioCard
+              title={item.data.title}
+              description={item.data.description}
+              thumbnail={item.data.thumbnail}
+              url={`/portfolio/${item.slug}`}
+            />
+          )
+        })
+      }
+    </div>
+  </section>
+</Layout>

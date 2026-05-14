@@ -1,0 +1,58 @@
+---
+import PageHeading from "../components/page-heading.astro";
+import Layout from "../layouts/main.astro";
+---
+
+<Layout title="About — Rachael Stavchansky">
+  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+    <PageHeading
+      title="About Me"
+      description="Technical writer, UX writer, and team manager with experience across SaaS, hardware, and developer platforms."
+    />
+
+    <img src="/assets/images/photo.png" class="relative z-30 w-48 my-10 rounded-xl" />
+
+    <h2 class="mb-2 text-2xl font-bold dark:text-neutral-200">Short Bio</h2>
+    <p
+      class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
+    >
+      I'm a technical writer who's not afraid of delving deeply into new technology to tease out and document what matters. I've worked across live streaming platforms, developer tools, hardware products, and billing software — always focused on making complex information accessible to the people who need it.
+    </p>
+
+    <h2 class="mt-8 mb-4 text-2xl font-bold dark:text-neutral-200">Skills</h2>
+
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-lg font-semibold dark:text-neutral-100">Technical Writing</h3>
+        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base">
+          I dig deep into new technology to surface and document what users need to know — from API reference guides to hardware getting-started content.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold dark:text-neutral-100">UX Writing</h3>
+        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base">
+          I craft elegant and concise UI copy with a clear call to action. My goal is to orient users without the copy drawing attention to itself.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold dark:text-neutral-100">Team Management</h3>
+        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base">
+          I learn from and with my team to improve outcomes for product users, documentation readers, and internal stakeholders. I've developed career frameworks and mentored writers at multiple levels.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="mt-10 mb-2 text-2xl font-bold dark:text-neutral-200">Let's Connect</h2>
+    <p
+      class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
+    >
+      Find me on <a
+        href="https://www.linkedin.com/in/rachael-stavchansky/"
+        target="_blank"
+        class="text-indigo-600 underline">LinkedIn</a
+      >, or send me an <a href="mailto:rdmstav+onlinecontact@gmail.com" class="text-indigo-600 underline"
+        >email</a
+      > and I'll get back to you.
+    </p>
+  </section>
+</Layout>
