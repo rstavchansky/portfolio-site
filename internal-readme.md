@@ -9,6 +9,7 @@ portfolio-site/
 ├── public/                        # Static files served as-is
 │   ├── assets/
 │   │   ├── images/portfolio/      # Portfolio item thumbnails
+│   │   ├── images/team/           # Team/headshot images
 │   │   ├── images/photo.png       # Profile photo
 │   │   └── pdfs/                  # Downloadable PDF samples
 │   └── favicon.ico
@@ -18,8 +19,21 @@ portfolio-site/
 │   │   └── js/main.js             # Dark mode toggle, sticky header, mobile menu
 │   ├── collections/
 │   │   └── menu.json              # Top navigation links
-│   ├── components/                # Reusable Astro components
-│   │   └── home/                  # Components used only on the home page
+│   ├── components/
+│   │   ├── home/                  # Components used only on the home page
+│   │   │   ├── portfolio.astro    # Featured portfolio items section
+│   │   │   ├── separator.astro    # Visual section divider
+│   │   │   └── writings.astro     # Recent posts section
+│   │   ├── button.astro           # Reusable CTA button
+│   │   ├── footer.astro           # Site footer
+│   │   ├── header.astro           # Site header with nav
+│   │   ├── logo.astro             # Logo mark
+│   │   ├── page-heading.astro     # Page title block
+│   │   ├── portfolio-card.astro   # Card used in the portfolio grid
+│   │   ├── posts-loop.astro       # Blog post list
+│   │   ├── square.astro           # Decorative square element
+│   │   ├── square-line.astro      # Decorative line element
+│   │   └── square-lines.astro     # Grouped decorative lines
 │   ├── content/
 │   │   ├── config.js              # Content collection schemas
 │   │   ├── portfolio/             # One .md file per portfolio item
@@ -27,15 +41,18 @@ portfolio-site/
 │   ├── layouts/
 │   │   ├── main.astro             # Outer shell: head, header, footer
 │   │   └── post.astro             # Layout wrapper for blog posts
-│   └── pages/
-│       ├── index.astro            # Home
-│       ├── about.astro            # About
-│       ├── portfolio.astro        # Portfolio grid (all items)
-│       ├── portfolio/[slug].astro # Individual portfolio item pages
-│       ├── posts.astro            # Writing index
-│       └── post/[slug].astro      # Individual blog post pages
+│   ├── pages/
+│   │   ├── index.astro            # Home
+│   │   ├── about.astro            # About
+│   │   ├── portfolio.astro        # Portfolio grid (all items)
+│   │   ├── portfolio/[slug].astro # Individual portfolio item pages
+│   │   ├── posts.astro            # Writing index
+│   │   └── post/[slug].astro      # Individual blog post pages
+│   └── env.d.ts                   # Astro environment type declarations
 ├── astro.config.mjs
+├── netlify.toml                   # Netlify build and redirect config
 ├── tailwind.config.mjs
+├── tsconfig.json
 └── package.json
 ```
 
