@@ -4,8 +4,8 @@ company: Wowza Media Systems
 category: Software documentation
 description: I wrote this article to teach Wowza Streaming Engine™ media server software users how to ingest a non-WebRTC source stream and play it back with WebRTC.
 thumbnail: /assets/images/portfolio/webrtc-article.png
-linkLabel: Access the article
-linkUrl: https://www.wowza.com/docs/ingest-rtsp-srt-or-rtmp-streams-into-wowza-streaming-engine-for-playback-with-webrtc
+linkLabel: Access a PDF of the guide
+linkUrl: /assets/pdfs/ingest-streams.pdf
 ---
 
 This article walks Wowza Streaming Engine users through the process of ingesting a non-WebRTC source stream — such as RTSP, SRT, or RTMP — and playing it back using WebRTC.
